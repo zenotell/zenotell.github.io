@@ -1,0 +1,125 @@
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* hamburger start*/
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 26px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition-duration: 0.25s;
+}
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+/* hamburger end */
+
+.modal-window-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 200px;
+  width: 100%;
+  background-color: #0e8388;
+  z-index: 1000;
+  transform: translateY(-400px);
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition-duration: 400ms;
+  border-radius: 30px;
+}
+
+.modal-window-active {
+  transform: translateY(80px);
+  transition-duration: 400ms !important;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@media (max-width: 765px) {
+  .modal-window-active {
+    transform: translateY(50px);
+  }
+}
+
+.header-wrapper {
+  margin-bottom: 10px;
+}
+
+.attention {
+  font-family: "Redcollar";
+  font-size: 15px;
+  margin-left: 20px;
+  transform: rotateZ(0deg);
+}
+
+.far {
+  font-size: 28px;
+  transform: rotateZ(40deg);
+}
+
+.btns-wrapper {
+  margin: 20px;
+}
+
+.btns-wrapper ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.btns-wrapper ul li {
+  user-select: none;
+  display: inline-flex;
+
+  max-width: 300px;
+  padding: 10px 20px;
+
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 10px;
+
+  border-radius: 20px;
+  transition-duration: 300ms;
+}
+
+.btns-wrapper ul li:hover {
+  transition-duration: 300ms;
+  color: black;
+  background-color: white;
+}
