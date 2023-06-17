@@ -19,10 +19,6 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
-
-    // <div className="App">
-    //   <MainPage></MainPage>
-    // </div>
   );
 }
 
